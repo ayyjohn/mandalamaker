@@ -1,5 +1,5 @@
 import DrawingArea from './drawing_area';
-import createjs from 'createjs-easeljs';
+var createjs = window.createjs;
 
 document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("main-canvas");
