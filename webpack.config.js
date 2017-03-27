@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './lib/mandala_maker.jsx',
+  entry: './lib/mandala_maker.js',
   output: {
     filename: './lib/bundle.js',
   },
@@ -17,6 +17,6 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.jsx', '*']
+    extensions: ['.js', '*']
   }
 };
