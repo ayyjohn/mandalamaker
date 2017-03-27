@@ -26,6 +26,7 @@ This project will be implemented using the following:
 ## Wireframe
 
 ![wireframe](https://s3-us-west-1.amazonaws.com/listentothis-dev/mandala_maker_wireframe.png)
+
 Mandala Maker will consist of a single screen with a large canvas element and interactive controls. The user will be able to enter a line width and the number of rotations. Check boxes can toggle whether or not to mirror or have rainbow effects on the drawing, and the current color can be selected from a pallet if the rainbow is not enabled. A button will be available to clear the canvas. The whitespace will likely be taken up by an instruction/about box.
 
 ## Implementation Timeline
