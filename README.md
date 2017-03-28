@@ -7,7 +7,7 @@ Mandalas are geometrically satisfying art originating in Buddhism and Hinduism. 
 
 In this app users will have access to a medium sized window and can draw with their mouse. Users will also be able to
 
-- [ ] change the color that they are drawing with. The default will cycle through rainbow colors as the mouse moves,
+- [ ] draw with the colors cycling through ROYGBIV
 - [ ] change the width of cursor that they are drawing with
 - [ ] change the number of rotational duplication axes
 - [ ] clear the canvas
