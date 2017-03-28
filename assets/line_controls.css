@@ -1,0 +1,13 @@
+section#line-controls {
+  display: flex;
+  position: absolute;
+  width: auto;
+  top: 100px;
+  left: 850px;
+}
+
+/*input.line-width {
+  width: 29px;
+  padding: 5px 0px 5px 4px;
+  border: 1px solid lightgrey;
+}*/
