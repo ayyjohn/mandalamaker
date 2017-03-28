@@ -16,6 +16,9 @@ In addition this project will include
 - [ ] an about section describing general purpose use
 - [ ] a production README.md
 
+Bonus/Future Features
+- [ ] allow the user to change what color they're drawing with by selecting a check box
+
 ## Architecture and Technologies
 
 This project will be implemented using the following:
