@@ -8,23 +8,23 @@
     <link rel="stylesheet" type="text/css" href="assets/main_canvas.css" />
     <link rel="stylesheet" type="text/css" href="assets/line_controls.css" />
     <link rel="stylesheet" type="text/css" href="assets/drawing_controls.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
     <title></title>
   </head>
   <body>
     <canvas id="main-canvas" height="700px" width="700px"></canvas>
     <section id="line-controls">
       <label>Line Width:
-        <input class="stroke" type="text" />
+        <input id="line-width" type="text" />
       </label>
     </section>
     <section id="drawing-controls">
       <button id="clear-button" type="button">Clear</button>
       <label>Number of Rotational Axes
-        <input type="text" class="axes" />
+        <input id="num-axes" type="text" />
       </label>
       <label>Mirror axes?
-        <input type="checkbox" class="mirroring" />
+        <input id="mirroring" type="checkbox" />
       </label>
     </section>
   </body>
