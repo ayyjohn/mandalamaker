@@ -1,0 +1,19 @@
+html, body, input, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
