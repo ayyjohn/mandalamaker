@@ -4,17 +4,24 @@
     <meta charset="utf-8">
     <script type="application/javascript" src="lib/bundle.js"></script>
     <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cantora+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/reset.css" />
     <link rel="stylesheet" type="text/css" href="assets/main_canvas.css" />
     <link rel="stylesheet" type="text/css" href="assets/line_controls.css" />
     <link rel="stylesheet" type="text/css" href="assets/drawing_controls.css" />
+    <link rel="stylesheet" type="text/css" href="assets/description.css" />
     <title></title>
   </head>
   <body>
     <canvas id="main-canvas" height="700px" width="700px"></canvas>
+    <section id="description">
+      <h1>Mandala Maker</h1>
+      <h2>Instructions</h2>
+      <p>click and drag to draw. Adjust the settings to change the number of times your lines are re-drawn by lowering/raising the number of rotations and toggling whether or not each line is mirrored over the y axis</p>
+    </section>
     <section id="line-controls">
       <label>Line Width:
-        <input id="line-width" type="text" value="20" />
+        <input id="line-width" type="range" min="1" max="100" value="20" />
       </label>
       <label>Rainbow
         <input id="rainbow" type="checkbox" checked/>
@@ -37,7 +44,7 @@
     </section>
     <section id="drawing-controls">
       <button id="clear-button" type="button">Clear</button>
-      <label>Number of Rotational Axes
+      <label>Number of Rotations
         <input id="num-axes" type="text" value="10" />
       </label>
       <label>Mirror axes?
