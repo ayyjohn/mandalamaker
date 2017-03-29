@@ -1,0 +1,7 @@
+section#description {
+  position: absolute;
+  display: flex;
+  top: 100px;
+  width: 200px;
+  left: 850px;
+}
