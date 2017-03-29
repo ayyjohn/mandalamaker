@@ -3,6 +3,7 @@ canvas#main-canvas {
   position: relative;
   top: 100px;
   left: 100px;
+  border-radius: 50%;
 }
 
 canvas#main-canvas:hover {
