@@ -7,8 +7,6 @@
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.0",
-    "babel-preset-react": "^6.23.0",
-    "createjs-easeljs": "^0.8.2",
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"
   },
