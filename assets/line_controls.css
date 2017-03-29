@@ -4,10 +4,26 @@ section#line-controls {
   width: auto;
   top: 100px;
   left: 850px;
+  flex-direction: column;
 }
 
-/*input.line-width {
-  width: 29px;
-  padding: 5px 0px 5px 4px;
-  border: 1px solid lightgrey;
-}*/
+ul#color-palette {
+  display: flex;
+}
+
+ul#color-palette li {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+ul#color-palette li:hover {
+  cursor: pointer;
+}
+
+div#current-color {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+}
