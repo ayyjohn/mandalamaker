@@ -3,7 +3,7 @@ section#drawing-controls {
   flex-direction: column;
   position: absolute;
   width: auto;
-  top: 300px;
+  top: 600px;
   left: 850px;
   border: 1px solid black;
 }

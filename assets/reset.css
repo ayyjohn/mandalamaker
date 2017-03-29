@@ -1,9 +1,9 @@
-html, body, div, input, button, canvas {
+html, body, section, div, input, button, canvas, h1, h2, p {
   margin: 0;
   padding: 0;
   border: 0;
   outline: 0;
-  font: inherit;
+  font-family: 'Cantora One';
   color: inherit;
   text-align: inherit;
   text-decoration: inherit;

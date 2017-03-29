@@ -2,7 +2,7 @@ section#line-controls {
   display: flex;
   position: absolute;
   width: auto;
-  top: 100px;
+  top: 400px;
   left: 850px;
   flex-direction: column;
 }
