@@ -5,8 +5,14 @@ section#line-controls {
   justify-content: space-between;
 }
 
+input#line-width {
+  margin-top: 10px;
+  margin-right: 3px;
+}
+
 label {
   width: 200px;
+  font-size: 18px;
 }
 
 ul#color-palette {
@@ -32,7 +38,12 @@ div#current-color-container {
   align-items: center;
 }
 
+p#current-color-label {
+  margin-left: 16px;
+}
+
 div#current-color {
+  margin-top: 5px;
   margin-left: 10px;
   width: 20px;
   height: 20px;
