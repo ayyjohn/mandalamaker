@@ -26,7 +26,7 @@
         <section id="line-controls">
           <div>
             <label>Line Width:
-              <input id="line-width" type="range" min="1" max="100" value="10" />
+              <input id="line-width" type="range" min="1" max="99" value="10" />
             </label>
             <p id="line-width-value">10</p>
           </div>
@@ -47,7 +47,7 @@
             <li id="white" style="background-color: rgb(255,255,255)"></li>
           </ul>
           <div id="current-color-container">
-            <p>Current Color</p>
+            <p id="current-color-label">Current Color</p>
             <div id="current-color" style="background-color: rgb(255, 0, 0)"></div>
           </div>
         </section>
@@ -56,9 +56,12 @@
             <button id="fill-button" type="button">Fill</button>
             <button id="clear-button" type="button">Clear</button>
           </section>
-          <label>Number of Rotations
+          <section id="rotation-controls">
+            <p>Number of Rotations</p>
+            <button class="rotation-buttons" id="decrease-rotations"></button>
             <input id="num-axes" type="text" value="10" />
-          </label>
+            <button class="rotation-buttons" id="increase-rotations"></button>
+          </section>
           <button id="fullscreen">Enter Fullscreen Mode *</button>
         </section>
         <p>*Please note that toggling fullscreen clears the canvas!*</p>
