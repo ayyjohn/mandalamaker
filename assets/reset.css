@@ -1,4 +1,4 @@
-html, body, section, div, input, button, canvas, h1, h2, p {
+html, body, section, div, input, button, canvas, h1, h2, p, ul, li {
   margin: 0;
   padding: 0;
   border: 0;
@@ -10,12 +10,15 @@ html, body, section, div, input, button, canvas, h1, h2, p {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
+  -webkit-appearence: none;
 }
 
 html, body {
   width: 100%;
   height: 100%;
   position: fixed;
+  display: flex;
+  flex-direction: column;
 }
 
 ul, li {
