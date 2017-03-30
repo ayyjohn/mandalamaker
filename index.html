@@ -17,7 +17,7 @@
       <h1 id="title">Mandala Maker</h1>
     </header>
     <section id="main">
-      <canvas id="canvas" height="560px" width="560px"></canvas>
+      <canvas id="canvas" height="560" width="560"></canvas>
       <section id="text-area">
         <section id="description">
           <h2 id="instructions-header">Instructions</h2>
@@ -52,10 +52,14 @@
           </div>
         </section>
         <section id="drawing-controls">
-          <button id="clear-button" type="button">Clear</button>
+          <section id="buttons">
+            <button id="fill-button" type="button">Fill</button>
+            <button id="clear-button" type="button">Clear</button>
+          </section>
           <label>Number of Rotations
             <input id="num-axes" type="text" value="10" />
           </label>
+          <button id="fullscreen">Fullscreen Mode</button>
         </section>
       </section>
     </section>
