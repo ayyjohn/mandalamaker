@@ -3,7 +3,11 @@ section#drawing-controls {
   flex-direction: column;
 }
 
-button#clear-button {
+section#buttons {
+  display: flex;
+  justify-content: center;
+}
+button#clear-button, button#fill-button {
   text-align: center;
   font-size: 24px;
   padding: 5px 7px;
@@ -19,4 +23,14 @@ input[type="text"]#num-axes {
   border: 1px solid gray;
   border-radius: 5px;
   padding: 5px;
+}
+
+button#fullscreen {
+  text-align: center;
+  font-size: 18px;
+  padding: 5px 7px;
+  border: 1px solid gray;
+  width: 80px;
+  margin: 10px auto;
+  border-radius: 5px;
 }
