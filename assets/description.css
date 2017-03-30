@@ -10,6 +10,6 @@ h2#instructions-header {
 }
 
 p#instructions {
-  padding: 5px;
-  /*margin-bottom: 10px;*/
+  padding-bottom: 10px;
+  padding-right: 20px;
 }
