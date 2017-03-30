@@ -6,53 +6,58 @@
     <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Cantora+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/reset.css" />
-    <link rel="stylesheet" type="text/css" href="assets/main_canvas.css" />
+    <link rel="stylesheet" type="text/css" href="assets/main.css" />
     <link rel="stylesheet" type="text/css" href="assets/line_controls.css" />
     <link rel="stylesheet" type="text/css" href="assets/drawing_controls.css" />
     <link rel="stylesheet" type="text/css" href="assets/description.css" />
     <title></title>
   </head>
   <body>
-    <h1 id="title">Mandala Maker</h1>
-    <canvas id="main-canvas" height="560px" width="560px"></canvas>
-    <section id="description">
-      <h2 id="instructions">Instructions</h2>
-      <p>Click and drag to draw. Change the number of times your lines are re-drawn by adjusting the number of rotations. Toggling the mirror will reflect the lines over the y axis as you draw. Turning off rainbow or clicking on any color will allow you to draw in one color</p>
-    </section>
-    <section id="line-controls">
-      <div>
-        <label>Line Width:
-          <input id="line-width" type="range" min="1" max="100" value="10" />
-        </label>
-        <p id="line-width-value">10</p>
-      </div>
-      <label>Rainbow
-        <input id="rainbow" type="checkbox" checked/>
-      </label>
-      <ul id="color-palette">
-        <li id="black" style="background-color: rgb(0,0,0)"></li>
-        <li id="red" style="background-color: rgb(255,0,0)"></li>
-        <li id="orange" style="background-color: rgb(255,127,0)"></li>
-        <li id="yellow" style="background-color: rgb(255,255,0)"></li>
-        <li id="green" style="background-color: rgb(0,255,0)"></li>
-        <li id="blue" style="background-color: rgb(0,0,255)"></li>
-        <li id="violet" style="background-color: rgb(148,0,211)"></li>
-        <li id="white" style="background-color: rgb(255,255,255)"></li>
-      </ul>
-      <div>
-        <label>Current Color
-          <div id="current-color" style="background-color: rgb(255, 0, 0)"></div>
-        </label>
-      </div>
-    </section>
-    <section id="drawing-controls">
-      <button id="clear-button" type="button">Clear</button>
-      <label>Number of Rotations
-        <input id="num-axes" type="text" value="10" />
-      </label>
-      <label>Mirror axes?
-        <input id="mirroring" type="checkbox" checked/>
-      </label>
+    <header id="header">
+      <h1 id="title">Mandala Maker</h1>
+    </header>
+    <section id="main">
+      <canvas id="canvas" height="560px" width="560px"></canvas>
+      <section id="text-area">
+        <section id="description">
+          <h2 id="instructions-header">Instructions</h2>
+          <p id="instructions">Click and drag to draw. Change the number of times your lines are re-drawn by adjusting the number of rotations. Toggling the mirror will reflect the lines over the y axis as you draw. Turning off rainbow or clicking on any color will allow you to draw in one color</p>
+        </section>
+        <section id="line-controls">
+          <div>
+            <label>Line Width:
+              <input id="line-width" type="range" min="1" max="100" value="10" />
+            </label>
+            <p id="line-width-value">10</p>
+          </div>
+          <label>Rainbow
+            <input id="rainbow" type="checkbox" checked/>
+          </label>
+          <label>Mirror axes
+            <input id="mirroring" type="checkbox" checked/>
+          </label>
+          <ul id="color-palette">
+            <li id="black" style="background-color: rgb(0,0,0)"></li>
+            <li id="red" style="background-color: rgb(255,0,0)"></li>
+            <li id="orange" style="background-color: rgb(255,127,0)"></li>
+            <li id="yellow" style="background-color: rgb(255,255,0)"></li>
+            <li id="green" style="background-color: rgb(0,255,0)"></li>
+            <li id="blue" style="background-color: rgb(0,0,255)"></li>
+            <li id="violet" style="background-color: rgb(148,0,211)"></li>
+            <li id="white" style="background-color: rgb(255,255,255)"></li>
+          </ul>
+          <div id="current-color-container">
+            <p>Current Color</p>
+            <div id="current-color" style="background-color: rgb(255, 0, 0)"></div>
+          </div>
+        </section>
+        <section id="drawing-controls">
+          <button id="clear-button" type="button">Clear</button>
+          <label>Number of Rotations
+            <input id="num-axes" type="text" value="10" />
+          </label>
+        </section>
+      </section>
     </section>
   </body>
 </html>
