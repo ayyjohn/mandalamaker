@@ -6,7 +6,9 @@ section#drawing-controls {
 section#buttons {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
+
 button#clear-button, button#fill-button {
   text-align: center;
   font-size: 24px;
@@ -17,14 +19,6 @@ button#clear-button, button#fill-button {
   border-radius: 5px;
 }
 
-input[type="text"]#num-axes {
-  width: 30px;
-  font-size: 18px;
-  border: 1px solid gray;
-  border-radius: 5px;
-  padding: 5px;
-}
-
 button#fullscreen {
   text-align: center;
   font-size: 18px;
@@ -33,4 +27,48 @@ button#fullscreen {
   width: 200px;
   margin: 10px auto;
   border-radius: 5px;
+}
+
+input[type="text"]#num-axes {
+  width: 30px;
+  font-size: 18px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px 3px;
+}
+
+
+section#rotation-controls {
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.rotation-buttons {
+  display: flex;
+  font-size: 30px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+button#decrease-rotations {
+  margin-left: 5px;
+}
+
+button#decrease-rotations:after {
+  content: "-";
+  position: relative;
+  top: -12px;
+  left: 4px;
+}
+
+button#increase-rotations:after {
+  content: "+";
+  position: relative;
+  top: -9px;
+  left: 4px;
 }
