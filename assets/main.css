@@ -14,10 +14,12 @@ h1#title {
 }
 
 canvas#canvas {
-  border: 1px solid black;
-  border-radius: 50%;
-  width: 560px;
-  height: 560px;
+  background-color: black;
+  border: 1px solid white;
+}
+
+canvas#canvas:hover {
+  cursor: crosshair;
 }
 
 section#main {
@@ -35,9 +37,7 @@ section#text-area {
   align-items: flex-start;
   width: 250px;
   height: 560px;
+  padding: 10px;
   margin-left: 50px;
-}
-
-canvas#canvas:hover {
-  cursor: crosshair;
+  background-color: white;
 }
