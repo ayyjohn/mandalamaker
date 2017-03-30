@@ -1,10 +1,16 @@
 section#line-controls {
   display: flex;
   position: absolute;
-  width: auto;
-  top: 400px;
+  width: 250px;
+  height: 200px;
+  top: 330px;
   left: 850px;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+label {
+  width: 200px;
 }
 
 ul#color-palette {
