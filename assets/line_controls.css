@@ -6,7 +6,6 @@ section#line-controls {
 }
 
 input#line-width {
-  margin-top: 10px;
   margin-right: 3px;
 }
 
@@ -39,14 +38,63 @@ div#current-color-container {
 }
 
 p#current-color-label {
-  margin-left: 16px;
+  font-size: 18px;
+}
+
+p#number-of-rotations {
+  font-size: 18px;
+  margin-right: 30px;
 }
 
 div#current-color {
   margin-top: 5px;
-  margin-left: 10px;
-  width: 20px;
-  height: 20px;
+  margin-left: 8px;
+  width: 30px;
+  height: 30px;
   border: 1px solid black;
   border-radius: 50%;
+}
+
+input[type="text"]#num-axes {
+  width: 30px;
+  font-size: 18px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px 3px;
+}
+
+
+section#rotation-controls {
+  width: 250px;
+  display: flex;
+  /*justify-content: center;*/
+  align-items: center;
+}
+
+button.rotation-buttons {
+  display: flex;
+  font-size: 30px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+button#decrease-rotations {
+  margin-left: 5px;
+}
+
+button#decrease-rotations:after {
+  content: "-";
+  position: relative;
+  top: -12px;
+  left: 4px;
+}
+
+button#increase-rotations:after {
+  content: "+";
+  position: relative;
+  top: -9px;
+  left: 4px;
 }
