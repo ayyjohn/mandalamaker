@@ -1,49 +1,114 @@
 # Mandala Maker
+[Live Version](ayyjohn.github.io/mandalamaker)
 
-## Background
-Mandalas are geometrically satisfying art originating in Buddhism and Hinduism. They often incorporate symmetry and patterns in great circular pieces that take monks weeks to complete. However, with Mandala Maker you too can be an artist and create wonderful patterns using rotational symmetry. Personally, I struggle with art in that I can't make consistent lines so everything I draw comes out lopsided. With Mandala Maker you choose the amount of rotational symmetry you want, and then your lines are reflected over a number of axes creating beautiful symmetric art in seconds. Complex patterns like roses and atomic nuclei can be made in seconds. With a small amount of effort you too can create a digital masterpiece.
+Mandala Maker is a simple and yet very satisfying drawing app. It uses rotational symmetry and mirroring to allow the user to draw multiple identical lines concurrently. For those who can't put pen to paper and create a masterpiece, Mandala Maker allows us to use the fact that humans love symmetry to make things that will catch everyone's eye. Mandala Maker was built using JavaScript and the EaselJS library from CreateJS to manipulate the HTML5 Canvas element.
 
-## Functionality and MVP
+## Features
 
-In this app users will have access to a medium sized window and can draw with their mouse. Users will also be able to
+* Rainbow cycling brush
+* Control over amount of rotations and mirroring
+* Control over brush size
+* Fullscreen mode with extra large canvas
+* Ability to choose a static color
+* Ability to choose the canvas color
 
-- [ ] draw with the colors cycling through ROYGBIV
-- [ ] change the width of cursor that they are drawing with
-- [ ] change the number of rotational duplication axes
-- [ ] clear the canvas
+## Technologies Used
 
-In addition this project will include
-- [ ] an about section describing general purpose use
-- [ ] a production README.md
+* JavaScript for control of the DOM and all dynamic drawing logic
+* [EaselJS](http://www.createjs.com/easeljs) to create a smooth drawing interface
+* HTML5 Canvas to create a basic area to draw on
 
-Bonus/Future Features
-- [ ] allow the user to change what color they're drawing with by selecting a check box
+## Feature Implementation Highlights
 
-## Architecture and Technologies
+### Rainbow Cycling
 
-This project will be implemented using the following:
-- Vanilla Javascript (ES2015) to handle logic and interactivity with the buttons
-- easel.js (from create.js) and html5's ```<canvas>``` to handle the rendering of the actual drawing area
-- webpack and webpack-dev-server to control bundling of scripts and allow for local testing
+<img src=https://s3-us-west-1.amazonaws.com/listentothis-dev/photos/general_demo.gif width="500" height="500" />
 
-## Wireframe
+One of the main goals of this project is to make creating interesting drawings as easy as possible. Many users don't have good artistic sense for color combinations, and single color mandalas are boring and one dimensional. By making the brush cycle as the user draws even scribbles come out looking beautiful. One of the difficulties with this is that RGB does not work cyclically. The standard RGB input for color looks like rgb(r, g, b) where r, g, and b are variables that can be set between 0 and 255 where rgb(0, 0, 0) is black, rgb(255, 255, 255) is white, and most other colors are some combination in between. The problem with this is that there is no linear path through this to iterate through as the user moves the mouse. Instead, I used the HSL color scheme which stands for Hue, Saturation and Lighting. With constant S and L values, iterating over H from 0 to 1 will move through ROYGBIV. However, Easel's stroke function, which is how the brush strokes get drawn to the canvas, doesn't take HSL values, so I had to write a conversion from HSL to RGB using known equations. Once this was complete, cycling through rainbow values was as simple as incrementing and resetting the hue value.
 
-![wireframe](https://s3-us-west-1.amazonaws.com/listentothis-dev/mandala_maker_wireframe.png)
+```Javascript
+export const hslToRGB = (h) => {
+  let s = 1;
+  let l = .50;
+  let hueToRGB = (p, q, t) => {
+    if (t < 0) { t += 1; }
+    if (t > 1) { t -= 1; }
+    if (t < 1/6) {
+      return p + (q - p) * 6 * t;
+    }
+    if (t < 1/2) {
+      return q;
+    }
+    if (t < 2/3) {
+      return p + (q - p) * (2/3 - t) * 6;
+    }
+    return p;
+  };
 
-Mandala Maker will consist of a single screen with a large canvas element and interactive controls. The user will be able to enter a line width and the number of rotations. Check boxes can toggle whether or not to mirror or have rainbow effects on the drawing, and the current color can be selected from a pallet if the rainbow is not enabled. A button will be available to clear the canvas. The whitespace will likely be taken up by an instruction/about box.
+  let q = l + s - l * s;
+  let p = 2 * l - q;
+  let r = hueToRGB(p, q, h + 1/3);
+  let g = hueToRGB(p, q, h);
+  let b = hueToRGB(p, q, h - 1/3);
+  return `rgb(
+    ${Math.round(r * 255)},
+    ${Math.round(g * 255)},
+    ${Math.round(b * 255)}
+  )`;
+};
+```
 
-## Implementation Timeline
+### Coordinate Conversion and Rotation
 
-### Day 1
-Discuss methods for implementation with the TAs. Would it be easier to set multiple draw lines based on the symmetry axes, or have one canvas that is re-created in a rotated orientation instead?
-Set up all node modules including webpack and easelJS. Create a webpack config, package.json, and .gitignore. Create an entry file that makes a canvas on the main page, and have the ability to draw on it with a fixed color and width.
+One of the most unintuitive parts of working with HTML5 Canvas is that its coordinate system follows similar patterns to two dimensional arrays in computer science. That is, the point (0, 0) is at the top left, and y increases downwards. This posed problems because the planned method for implementing the rotations was to, well, rotate, and rotation around an arbitrary point is much uglier and easier to mess up than rotating around the origin if the origin is centered. So, rather than make every conversion nasty and error prone, I translated and inverted the canvas.
 
-### Day 2
-Spend the day cementing the basics of easel.js. Attempt to be able to draw multiple lines at once simply by adding more to the drawing. This will in the future be done dynamically based on the number of symmetry axes. Attempt to get symmetry axes to render based on a hard-coded in number. Add button to clear canvas instead of refreshing.
+```JavaScript
+this.stage.setTransform(this.canvas.width / 2, this.canvas.height / 2);
+this.stage.scaleY = -1;
+```
 
-### Day 3
-Work on the logic of drawing multiple lines at the same time possibly using polar coordinates based on the number of axes input by the user. Handle the logic of the graph needing to be centered at the middle rather than the default top left corner. Handle the ability to change line width, and drawing color.
-Hopefully by the end of the day have the ability to draw with symmetricality.
+This allowed the rotation to be as simple as possible
 
-### Day 4
-Add user interactivity buttons and inputs for clearing, changing line width, and color/rainbow toggle. Add an instructional set based on questions from family/friends attempting to use it, address any questions raised by users. Style the page with general good css practices, make it look professional.
+```JavaScript
+export const rotate = (x, y, n, axes) => {
+  return {
+    x: x * Math.cos(2 * n * Math.PI / axes) - y * Math.sin(2 * n * Math.PI / axes),
+    y: x * Math.sin(2 * n * Math.PI / axes) + y * Math.cos(2 * n * Math.PI / axes)
+  };
+};
+```
+
+however it posed a new problem in that the mouse clicks were then offset by the translation, and in addition drawing upwards made the lines move downwards, and vice versa. This was solved by implementing a second translation function that adjusted the click values, both by translation and y-inversion.
+
+```Javascript
+getMousePos(event) {
+  let rect = this.canvas.getBoundingClientRect();
+  return {
+    x: this.stage.mouseX - this.canvas.width / 2,
+    y: (-this.stage.mouseY - 2 + this.canvas.height / 2)
+  };
+}
+```
+
+## Personal Highlights
+
+### Mr. Star
+<img src=https://s3-us-west-1.amazonaws.com/listentothis-dev/photos/not_symmetry.png width="500" height="500"/>
+
+### One Love One World
+<img src=https://s3-us-west-1.amazonaws.com/listentothis-dev/photos/Screen+Shot+2017-03-30+at+8.58.49+PM.png width="500" height="500"/>
+
+### The White Lotus Tile
+<img src=https://s3-us-west-1.amazonaws.com/listentothis-dev/photos/Screen+Shot+2017-03-30+at+9.09.41+PM.png width="500" height="500"/>
+
+
+## Future Plans
+
+### Save/Share feature
+It's nice to be able to share your creations. Eventually Mandala Maker will include a module at the bottom allowing you to save the drawing as a png/jpg file, or post it to social media sites like facebook and twitter.
+
+### Improved Color Swatch
+With more static options the user would be able to make much less clashing images by using smoother, more complementary colors rather than the default ROYGBIV. A larger swatch dropdown could be an option, or even sliders to adjust the H, S, and L values interactively.
+
+### Toggleable Guide Lines
+To increase the ease of visualizing exactly where the other lines will show up when you draw a second canvas could be overlaid on top of the first, and its job would be purely to draw lines spanning from the edges of the canvas to the origin. This would make it easier to do more complex designs where moving with more precise emphasis on pixels is important. 
