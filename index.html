@@ -21,11 +21,17 @@
       <section id="text-area">
         <section id="description">
           <h2 id="instructions-header">Instructions</h2>
-          <p id="instructions">Click and drag to draw. Change the number of times your lines are re-drawn by adjusting the number of rotations. Toggling the mirror will reflect the lines over the y axis as you draw. Turning off rainbow or clicking on any color will allow you to draw in one color</p>
+          <p id="instructions">Click and drag to draw. Change the number of times your lines are re-drawn by adjusting the number of rotations.</p>
+        </section>
+        <section id="rotation-controls">
+          <p id="number-of-rotations">Rotations</p>
+          <button class="rotation-buttons" id="decrease-rotations"></button>
+          <input id="num-axes" type="text" value="10" />
+          <button class="rotation-buttons" id="increase-rotations"></button>
         </section>
         <section id="line-controls">
           <div>
-            <label>Line Width:
+            <label>Line Width
               <input id="line-width" type="range" min="1" max="99" value="10" />
             </label>
             <p id="line-width-value">10</p>
@@ -55,12 +61,6 @@
           <section id="buttons">
             <button id="fill-button" type="button">Fill</button>
             <button id="clear-button" type="button">Clear</button>
-          </section>
-          <section id="rotation-controls">
-            <p>Number of Rotations</p>
-            <button class="rotation-buttons" id="decrease-rotations"></button>
-            <input id="num-axes" type="text" value="10" />
-            <button class="rotation-buttons" id="increase-rotations"></button>
           </section>
           <button id="fullscreen">Enter Fullscreen Mode *</button>
         </section>
