@@ -1,5 +1,5 @@
 # Mandala Maker
-[Live Version](ayyjohn.github.io/mandalamaker)
+[Live Version](https://ayyjohn.github.io/mandalamaker/)
 
 Mandala Maker is a simple and yet very satisfying drawing app. It uses rotational symmetry and mirroring to allow the user to draw multiple identical lines concurrently. For those who can't put pen to paper and create a masterpiece, Mandala Maker allows us to use the fact that humans love symmetry to make things that will catch everyone's eye. Mandala Maker was built using JavaScript and the EaselJS library from CreateJS to manipulate the HTML5 Canvas element.
 
@@ -111,4 +111,4 @@ It's nice to be able to share your creations. Eventually Mandala Maker will incl
 With more static options the user would be able to make much less clashing images by using smoother, more complementary colors rather than the default ROYGBIV. A larger swatch dropdown could be an option, or even sliders to adjust the H, S, and L values interactively.
 
 ### Toggleable Guide Lines
-To increase the ease of visualizing exactly where the other lines will show up when you draw a second canvas could be overlaid on top of the first, and its job would be purely to draw lines spanning from the edges of the canvas to the origin. This would make it easier to do more complex designs where moving with more precise emphasis on pixels is important. 
+To increase the ease of visualizing exactly where the other lines will show up when you draw a second canvas could be overlaid on top of the first, and its job would be purely to draw lines spanning from the edges of the canvas to the origin. This would make it easier to do more complex designs where moving with more precise emphasis on pixels is important.
