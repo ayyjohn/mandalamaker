@@ -25,6 +25,7 @@ canvas#canvas:hover {
 }
 
 section#main {
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
