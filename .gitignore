@@ -3,3 +3,4 @@ node_modules/*
 
 .gitignore
 bundle.js.map
+guideline_canvas.js
