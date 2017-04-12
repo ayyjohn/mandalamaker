@@ -9,13 +9,13 @@ section#buttons {
   align-items: center;
 }
 
-button#clear-button, button#fill-button {
+button#clear-button, button#fill-button, a#download-button {
   text-align: center;
   font-size: 24px;
-  padding: 5px 7px;
+  padding: 5px 5px;
   border: 1px solid gray;
   width: 60px;
-  margin: 10px auto;
+  margin: 10px 3px;
   border-radius: 5px;
 }
 
@@ -28,3 +28,5 @@ button#fullscreen {
   margin: 10px auto;
   border-radius: 5px;
 }
+
+/*<a id="download-button" download="mandala">Save</a>*/
