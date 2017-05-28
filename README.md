@@ -11,6 +11,7 @@ Mandala Maker is a simple and yet very satisfying drawing app. It uses rotationa
 * Fullscreen mode with extra large canvas
 * Ability to choose a static color
 * Ability to choose the canvas color
+* Ability to save mandalas as a file to show others
 
 ## Technologies Used
 
@@ -103,9 +104,6 @@ getMousePos(event) {
 
 
 ## Future Plans
-
-### Save/Share feature
-It's nice to be able to share your creations. Eventually Mandala Maker will include a module at the bottom allowing you to save the drawing as a png/jpg file, or post it to social media sites like facebook and twitter.
 
 ### Improved Color Swatch
 With more static options the user would be able to make much less clashing images by using smoother, more complementary colors rather than the default ROYGBIV. A larger swatch dropdown could be an option, or even sliders to adjust the H, S, and L values interactively.
