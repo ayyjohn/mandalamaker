@@ -19,6 +19,10 @@ button#clear-button, button#fill-button, a#download-button {
   border-radius: 5px;
 }
 
+button, a:hover {
+  cursor: pointer;
+}
+
 button#fullscreen {
   text-align: center;
   font-size: 18px;
