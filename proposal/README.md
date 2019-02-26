@@ -18,10 +18,11 @@ In addition this project will include
 
 Bonus/Future Features
 - [x] allow the user to change what color they're drawing with by selecting a check box
-- [ ] saving/sharing
+- [x] saving/sharing
 - [ ] line width cycling based on distance from the origin
 - [ ] a second overlay canvas with guidelines that dynamically adjust to the number of rotations
 - [ ] an undo button
+- [ ] HSL sliders for the user to have complete control over colors without needing to cycle manually
 
 ## Architecture and Technologies
 
