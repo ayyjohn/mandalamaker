@@ -1,22 +1,25 @@
+const { WebpackPluginServe: Serve } = require('webpack-plugin-serve');
+
 module.exports = {
   entry: './lib/mandala_maker.js',
-  output: {
-    filename: './lib/bundle.js',
-  },
+  mode: 'development',
   module: {
-    loaders: [
+    rules: [
       {
         test: [/\.jsx?$/],
         exclude: /(node_modules)/,
         loader: 'babel-loader',
-        query: {
-          presets: ['es2015']
+        options: {
+          presets: ['@babel/preset-env']
         }
       }
     ]
   },
   devtool: 'source-map',
+  plugins: [new Serve({
+    port: 8000
+  })],
   resolve: {
     extensions: ['.js', '*']
-  }
+  },
 };
