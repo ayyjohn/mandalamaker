@@ -1,5 +1,9 @@
 # Mandala Maker
-[Live Version](https://ayyjohn.github.io/mandalamaker/)
+
+## Quickstart
+0. `npm install`
+1. `npm start`
+2. open `localhost:8000`
 
 Mandala Maker is a simple and yet very satisfying drawing app. It uses rotational symmetry and mirroring to allow the user to draw multiple identical lines concurrently. For those who can't put pen to paper and create a masterpiece, Mandala Maker allows us to use the fact that humans love symmetry to make things that will catch everyone's eye. Mandala Maker was built using JavaScript and the EaselJS library from CreateJS to manipulate the HTML5 Canvas element.
 
