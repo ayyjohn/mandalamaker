@@ -98,14 +98,13 @@ getMousePos(event) {
 ## Personal Highlights
 
 ### Mr. Star
-<img src=https://s3-us-west-1.amazonaws.com/listentothis-dev/photos/not_symmetry.png width="500" height="500"/>
+<img src=assets/examples/mr_star.png width="500" height="500"/>
 
 ### One Love One World
 <img src=https://s3-us-west-1.amazonaws.com/listentothis-dev/photos/Screen+Shot+2017-03-30+at+8.58.49+PM.png width="500" height="500"/>
 
 ### The White Lotus Tile
-<img src=https://s3-us-west-1.amazonaws.com/listentothis-dev/photos/Screen+Shot+2017-03-30+at+9.09.41+PM.png width="500" height="500"/>
-
+<img src=assets/examples/white_lotus_tile.png width="500" height="500"/>
 
 ## Future Plans
 
