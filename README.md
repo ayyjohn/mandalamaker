@@ -27,7 +27,11 @@ Mandala Maker is a simple and yet very satisfying drawing app. It uses rotationa
 
 ### Rainbow Cycling
 
-<img src=https://s3-us-west-1.amazonaws.com/listentothis-dev/photos/general_demo.gif width="500" height="500" />
+#### with axes mirrored
+<img src=assets/examples/cycling.gif width="500" height="500" />
+
+#### without axes mirrored
+<img src=assets/examples/cycling_no_mirror.gif width="500" height="500" />
 
 One of the main goals of this project is to make creating interesting drawings as easy as possible. Many users don't have good artistic sense for color combinations, and single color mandalas are boring and one dimensional. By making the brush cycle as the user draws even scribbles come out looking beautiful. One of the difficulties with this is that RGB does not work cyclically. The standard RGB input for color looks like rgb(r, g, b) where r, g, and b are variables that can be set between 0 and 255 where rgb(0, 0, 0) is black, rgb(255, 255, 255) is white, and most other colors are some combination in between. The problem with this is that there is no linear path through this to iterate through as the user moves the mouse. Instead, I used the HSL color scheme which stands for Hue, Saturation and Lighting. With constant S and L values, iterating over H from 0 to 1 will move through ROYGBIV. However, Easel's stroke function, which is how the brush strokes get drawn to the canvas, doesn't take HSL values, so I had to write a conversion from HSL to RGB using known equations. Once this was complete, cycling through rainbow values was as simple as incrementing and resetting the hue value.
 
